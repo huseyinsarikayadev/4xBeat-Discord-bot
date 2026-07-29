@@ -319,6 +319,9 @@ public static help(): EmbedBuilder {
 
         > 🔊 **baba** | **baba**
         > SoundPad sesidir
+
+        > 🔊 **polis** | **polis**
+        > SoundPad sesidir
         
         `,
             inline: false
