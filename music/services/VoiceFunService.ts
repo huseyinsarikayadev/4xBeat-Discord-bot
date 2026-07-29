@@ -76,29 +76,41 @@ export class VoiceFunService {
 
     }
 
-   public static async tour(
-    target: GuildMember,
-    route: VoiceChannel[],
-    onVisit?: (index: number) => Promise<void>
-        ) {
-            const originalChannel = target.voice.channel;
+    public static async tour(
+        target: GuildMember,
+        route: VoiceChannel[],
+        onVisit?: (index: number) => Promise<void>
+    ) {
+        const originalChannel = target.voice.channel;
 
-    if (!originalChannel)
-        return;
+        if (!originalChannel)
+            return;
 
-    for (let i = 0; i < route.length; i++) {
+        for (let i = 0; i < route.length; i++) {
 
-        await target.voice.setChannel(route[i]);
+            // Kullanıcı tekrar ses kanalına girene kadar bekle
+            while (!target.voice.channel) {
+                await this.wait(1000);
+            }
 
-        await onVisit?.(i);
+            try {
+                await target.voice.setChannel(route[i]);
+                await onVisit?.(i);
+            } catch (err) {
+                console.error("Tour error:", err);
+            }
 
-        await this.wait(1000);
+            await this.wait(1000);
+        }
 
-    }
-
-    await target.voice.setChannel(originalChannel);
-
-
+        // Tur bitince kullanıcı hâlâ seste ise eski kanalına döndür
+        if (target.voice.channel) {
+            try {
+                await target.voice.setChannel(originalChannel);
+            } catch (err) {
+                console.error("Return error:", err);
+            }
+        }
     }
 
 }
