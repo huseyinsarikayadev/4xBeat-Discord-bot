@@ -303,9 +303,6 @@ public static help(): EmbedBuilder {
         > 🎩 **takke** | **tk**
         > Text kanalına 5 kez SABAH BEŞTE KALKTIM! yazar.
 
-        > 💢 **kufur** | **kfr**
-        > Bot size küfür eder.
-
         > 🔇 **randomvoice** | **rv**
         > Bot ses kanalındaki random birine 5 saniyeliğine deaf ya da mute atar.
 
