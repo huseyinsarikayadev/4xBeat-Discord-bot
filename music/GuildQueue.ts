@@ -26,7 +26,7 @@ export class GuildQueue {
         this.player.on("disconnected", () => {
 
             console.log("🗑️ Queue temizleniyor.");
-
+            this.loop = false;
             this.clear();
 
         });
@@ -105,7 +105,7 @@ export class GuildQueue {
     }
 
     public async skip(): Promise<void> {
-
+        this.loop = false;
         this.player.skip();
 
     }
@@ -113,7 +113,7 @@ export class GuildQueue {
 
         this.songs = [];
         this.currentSong = null;
-
+        this.loop = false;
         this.player.stop();
 
     }
@@ -158,7 +158,7 @@ export class GuildQueue {
 
         this.disconnectTimer = setTimeout(() => {
             console.log("Timer tetiklendi:", Date.now());
-
+            this.loop = false;
             this.stop();
             this.clear();
 
