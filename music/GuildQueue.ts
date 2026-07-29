@@ -163,7 +163,7 @@ export class GuildQueue {
             this.clear();
 
             console.log("⏱️ Auto disconnect çalıştı.");
-        }, 5000); // test için 5 saniye
+        }, 5 * 60 * 1000);
     }
 
 
