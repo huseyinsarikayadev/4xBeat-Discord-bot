@@ -34,8 +34,8 @@ const command: Command = {
                 await message.reply({
                     embeds: [
                         NotificationService.soundPadPlayed(
-                            "🔇",
-                            "Kes!"
+                            "😔",
+                            "Baba!.."
                         )
                     ]
                 });
