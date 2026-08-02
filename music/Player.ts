@@ -223,6 +223,8 @@ export class Player extends EventEmitter {
 
         this.killCurrentProcesses();
 
+        this.audioPlayer.stop(true);
+
         this.voiceConnection.destroy();
 
         this.voiceConnection = null;

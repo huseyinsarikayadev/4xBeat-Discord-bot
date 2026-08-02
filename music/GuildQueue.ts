@@ -33,7 +33,6 @@ export class GuildQueue {
         
 
         this.player.on("idle", async () => {
-
             const nextSong = this.nextSong();
 
             if (!nextSong) {
