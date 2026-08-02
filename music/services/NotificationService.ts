@@ -322,6 +322,9 @@ public static help(): EmbedBuilder {
 
         > 🔊 **polis** | **polis**
         > SoundPad sesidir
+
+        > 🔊 **hain** | **hain**
+        > SoundPad sesidir
         
         `,
             inline: false

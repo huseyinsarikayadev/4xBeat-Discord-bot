@@ -17,9 +17,10 @@ import slot from "../commands/fun/slot.js";
 import roulette from "../commands/fun/roulette.js";
 import tour from "../commands/fun/tour.js";
 import takke from "../commands/fun/takke.js";
-import kes from "../commands/soundpad/kes.js"
-import baba from "../commands/soundpad/baba.js"
-import polis from "../commands/soundpad/polis.js"
+import kes from "../commands/soundpad/kes.js";
+import baba from "../commands/soundpad/baba.js";
+import polis from "../commands/soundpad/polis.js";
+import hain from "../commands/soundpad/hain.js";
 export function loadCommands(client: ExtendedClient): void {
 
     const commands = [
@@ -42,7 +43,8 @@ export function loadCommands(client: ExtendedClient): void {
         takke,
         kes,
         baba,
-        polis
+        polis,
+        hain
 
     ];
 
